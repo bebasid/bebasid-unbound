@@ -1,0 +1,51 @@
+version: '3.7'
+
+services:
+  unbound-default:
+    container_name: unbound-default
+    image: "ghcr.io/bebasid/unbound-default:latest"
+    expose:
+      - "53"
+    networks:
+     - vpcbr:
+        ipv4_address: 172.27.154.10
+    ports:
+      - target: 53
+        published: 31053
+        protocol: tcp
+        mode: host
+      - target: 53
+        published: 31053
+        protocol: udp
+        mode: host
+    restart: unless-stopped
+
+  unbound-family:
+    container_name: unbound-family
+    image: "ghcr.io/bebasid/unbound-family:latest"
+    expose:
+      - "53"
+    networks:
+     - vpcbr:
+        ipv4_address: 172.27.154.20
+    ports:
+      - target: 53
+        published: 32053
+        protocol: tcp
+        mode: host
+      - target: 53
+        published: 32053
+        protocol: udp
+        mode: host
+    restart: unless-stopped
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.27.154.0/24
+
+
+volumes:
+  mydata:
