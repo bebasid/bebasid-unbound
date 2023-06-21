@@ -24,10 +24,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - dockerfile: ./Dockerfile-default
-            image: ghcr.io/bebasid/unbound-default
-          - dockerfile: ./Dockerfile-family
-            image: ghcr.io/bebasid/unbound-family
+          - dockerfile: ./Dockerfile
+            image: ghcr.io/bebasid/unbound
     permissions:
       contents: read
       packages: write

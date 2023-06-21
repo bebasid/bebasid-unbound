@@ -1,15 +1,5 @@
 #!/bin/sh
 
-# Author: haibara <haibara@bebasid.com>
-# =====================================
-#
-# This file has been modified by haibara <haibara@bebasid.com>
-# from Satish's Gaikwad <satish@satishweb.com> under Apache 2.0 License
-#
-# The copyright holder <haibara> grant the freedom
-# to copy, modify, convey, adapt, and/or redistribute this work 
-# under the terms of the Massachusetts Institute of Technology License.
-
 . /etc/profile
 
 UNBOUND_BLOCKED_HOSTS_FILE=/etc/unbound/unbound.blocked.hosts
