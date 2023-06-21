@@ -17,7 +17,7 @@ RUN apk add \
 
 ADD config/unbound.ini /etc/supervisor.d/supervisor-unbound.ini
 
-ADD config/unbound-default.conf /etc/unbound/unbound.conf
+ADD config/unbound.conf /etc/unbound/unbound.conf
 ADD docker-entrypoint.sh /docker-entrypoint
 COPY scripts /scripts
 RUN chmod u+x /docker-entrypoint /scripts/*
